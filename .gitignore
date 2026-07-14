@@ -1,26 +1,183 @@
-# Ignore site configs
+# Specific locations within Aspen Discovery to exclude from git   #
+# Files are excluded either because                               #
+#  - they contain sensitive data (i.e. passwords)                 #
+#  - they can change at runtime                                   #
+#  - they can be easily downloaded or are machine specfic         #
+###################################################################
+tmp
 sites/*
-!sites/example
-
-# Ignore local environment settings
-.env
-.env.local
-
-# Ignore folders from code editors
+!sites/.idea
+!sites/default
+!sites/template.*
+sites/default/solr*/server/logs/*
+code/aspen_app/.expo/**
+code/aspen_app/.expo-shared/**
+code/aspen_app/node_modules/**
+code/web/interface/cache/*
+code/web/interface/compile/*
+code/web/phpinfo.php
+code/web/images/fiveStar/*
+code/web/images/charts/*
+code/web/repository_images/*
+code/web/files/medium/*
+code/web/files/thumbnail/*
+code/web/files/original/*
+code/web/google*.html
+code/web/getWorkIdUpdates.php
+code/web/sitemaps/*.xml
+code/web/sitemaps/*.txt
+code/web/node_modules
+code/debug
+tests/jmeter/results/*
+tests/conf/config.ini
+tests/e2e/selenium-ide/sites/**
+!tests/e2e/selenium-ide/sites/example/conf/
+!tests/e2e/selenium-ide/sites/example/conf/**
+data-import
+config.pwd.ini
+author_authorities.properties.temp
+author_authorities.v1.properties
+hcl_solr_bib_export.properties
+horizon_export.properties
+*.pid
+*.port
+install/templates/*
 .vscode
-.idea
 
-# Ignore temporary, cached, backup, and log files
+# Compiled source #
+###################
+*.com
+*.class
+*.o
+*.so
+
+# Unneeded files that are large or built at runtime #
+#####################################################
+III_Telnet_Extract.pl
+LexileTitles.txt
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
 *.log
-*.tmp
-*.bak
-.cache/
-tmp/
+*.log.1
+*.log.2
+*.log.3
+*.log.4
+*.log.5
+*.sqlite
 
-# Ignore macOS, Windows, and Linux files
-.DS_Store
-Thumbs.db
+# MARC records #
+################
+*.marc
+
+# IDE Files #
+#################
+.buildpath
+.project
+.classpath
+org.eclipse.*.prefs
+*.css.map
+.settings/
+out/
+
+# OS generated files #
+######################
+.DS_Store*
 ehthumbs.db
-*~
-*.swp
-*.swo
+Icon?
+Thumbs.db
+~$*.docx
+~$*.doc
+documentation/~*.tmp
+# Word Tempory File
+.vagrant/
+
+# Dreamweaver Files #
+#####################
+[_]notes/
+*.LCK
+
+# File-watcher mishaps #
+########################
+*.min.min.js
+
+# Nashville CarlX Tools #
+########################
+code/web/services/CarlXTools
+code/web/interface/themes/nashville_resp/CarlXTools
+
+# Other stuff #
+###############
+main.tmpcss
+
+code/web/fonts/HalisR-Regular.otf
+code/web/fonts/HalisR-S-Regular.otf
+code/web/migrations/importResults.txt
+.idea/aspen-discovery.iml
+.idea/*.xml
+.idea/dataSources/**
+code/web/.idea/watcherTasks.xml
+code/web/.idea/workspace.xml
+code/web/.idea/workspace.xml
+code/web/.idea/watcherTasks.xml
+code/web/fonts/IndieFlower-Regular.ttf
+code/web/fonts/KleeOne-SemiBold.ttf
+code/aspen_app/package-lock.json
+data_dir_setup/update_solr_files.sh
+code/web/.idea/workspace.xml
+code/aspen_app/.env
+code/aspen_app/.idea/aspen_app.iml
+code/aspen_app/.idea/workspace.xml
+code/web/.idea/dataSources.local.xml
+code/web/.idea/php.xml
+code/web/.idea/workspace.xml
+code/aspen_app/app-configs/app.lida.json
+code/aspen_app/app-configs/app.lida-production.json
+code/web/cron/fetchMarc.ini
+code/cron/.idea/*
+code/web/.idea/*
+code/aspen_app/.idea/*
+install/createSite.ini
+.idea/scopes/_less_files.xml
+code/aspen_app/.run/Update EAS.run.xml
+code/aspen_app/.run/Update Aspen LiDA Instance.run.xml
+code/aspen_app/.run/Start Aspen LiDA Instance.run.xml
+code/aspen_app/updateInternal.sh
+code/aspen_app/updateEASInternal.sh
+code/aspen_app/startInternal.sh
+install/createSiteSettings.ini
+code/aspen_app/credentials.json
+code/web/services/Authentication/SAML/certs/*
+code/web/.idea/dataSources.xml
+code/web/.idea/dataSources.local.xml
+code/aspen_app/startTestApp.sh
+code/aspen_app/updateEASTestApps.sh
+code/aspen_app/updateTestApps.sh
+code/cron/.idea/misc.xml
+tests/phpunit/.phpunit.result.cache
+install/unit_tests_local.ini
+intellij_project
+phpstorm_project
+code/aspen_app/updaterInternal.sh
+code/aspen_app/%ProgramData%/Microsoft/Windows/UUS/State/_active.uusver
+data_dir_setup/.idea/workspace.xml
+/code/web/images/mnps
+.htaccess
+sites/aspen-discovery.lndo.site/
+code/web/sys/Authentication/OAuth2/private.key
+code/web/sys/Authentication/OAuth2/public.key
+code/web/sys/Authentication/OAuth2/encryption.key
+code/web/vendor/
+.composer/
